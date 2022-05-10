@@ -3,7 +3,7 @@ package ss3.bai_tap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class them_phan_tu_vao_mang {
+public class AddElementToArray {
     public static void main(String[] args) {
         int[] array = {2, 3, 7, 9, 2, 6, 12, 3, 5, 78, 98};
 

@@ -2,7 +2,7 @@ package ss3.bai_tap;
 
 import java.util.Scanner;
 
-public class GOP_MANG {
+public class MergeArray {
     public static void main(String[] args) {
 
         int size;
