@@ -5,57 +5,40 @@ import java.util.Date;
 
 public class StopWatch {
 
-    private Date startTime;
-    private Date endTime;
-    private Date elapsedTime;
+    private long starTime;
+    private long endTime;
 
-
-    public Date getStartTime() {
-
-        return startTime;
+    public StopWatch() {
     }
 
-    public void setStartTime(Date startTime)
-    {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime()
-    {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-
+    public StopWatch(long starTime, long endTime) {
+        this.starTime = starTime;
         this.endTime = endTime;
     }
 
-    // Create constructor khong co tham so
-    public StopWatch() {
-        this.startTime = new Date(); // get current date
+    public long getStarTime() {
+        return starTime;
     }
 
-    private void start() {
-        this.startTime = new Date(); // reset starttime
+    public void setStarTime(long starTime) {
+        this.starTime = starTime;
     }
 
-    private void stop() {
-        this.endTime = new Date(); // reset starttime
+    public long getEndTime() {
+        return endTime;
     }
 
-    public long getElapsedTime() {
-        return this.endTime.getTime() - this.startTime.getTime();
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
     }
-
-    private long elapsedTime() {
-        return 0;
+    public long start (){
+        return starTime = System.currentTimeMillis();
     }
-
-    public static void main(String[] args) {
-
-
-
-
-
-}}
+    public long stop (){
+        return endTime = System.currentTimeMillis();
+    }
+    public long getElapsedTime(){
+        return endTime-starTime;
+    }
+}
 
