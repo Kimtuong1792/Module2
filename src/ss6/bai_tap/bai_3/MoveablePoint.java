@@ -1,6 +1,6 @@
-package ss6.bai_tap;
+package ss6.bai_tap.bai_3;
 
-public class MoveablePoint extends Point{
+public class MoveablePoint extends Point {
     private float xSpeed;
     private float ySpeed;
 

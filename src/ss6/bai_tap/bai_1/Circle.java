@@ -1,4 +1,4 @@
-package ss6.bai_tap;
+package ss6.bai_tap.bai_1;
 
 public class Circle {
     private double radius = 1.0;
@@ -28,18 +28,20 @@ public class Circle {
     public void setColor(String color) {
         this.color = color;
     }
-    public double getCircleArea(){
-        return Math.pow(radius,2) * 3.14;
+
+    public double getCircleArea() {
+        return Math.pow(radius, 2) * 3.14;
     }
-    public double getPerimeter(){
-        return 2*radius*3.14;
+
+    public double getPerimeter() {
+        return 2 * radius * 3.14;
     }
 
     @Override
     public String toString() {
         return "Circle{" +
                 "radius=" + radius +
-                ", color='" + color + '\'' + ", area = " + getCircleArea()+ " and perimeter = " + getPerimeter()+
+                ", color='" + color + '\'' + ", area = " + getCircleArea() + " and perimeter = " + getPerimeter() +
                 '}';
     }
 }

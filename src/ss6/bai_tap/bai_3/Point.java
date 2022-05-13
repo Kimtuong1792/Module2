@@ -1,4 +1,4 @@
-package ss6.bai_tap;
+package ss6.bai_tap.bai_3;
 
 import java.util.Arrays;
 
@@ -29,14 +29,16 @@ public class Point {
     public void setY(float y) {
         this.y = y;
     }
-    public void setXY(float x,float y){
+
+    public void setXY(float x, float y) {
         this.x = x;
         this.y = y;
     }
-    public float[] getXY(){
-        float[] arr1  = new float[2];
+
+    public float[] getXY() {
+        float[] arr1 = new float[2];
         arr1[0] = getX();
-        arr1[1]=getY();
+        arr1[1] = getY();
 
         return arr1;
     }

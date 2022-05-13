@@ -1,4 +1,4 @@
-package ss6.bai_tap;
+package ss6.bai_tap.bai_1;
 
 public class TestCylinder {
     public static void main(String[] args) {
@@ -6,7 +6,7 @@ public class TestCylinder {
         System.out.println(cylinder);
         cylinder = new Cylinder(5);
         System.out.println(cylinder);
-        cylinder = new Cylinder(3,4,"blue");
+        cylinder = new Cylinder(3, 4, "blue");
         System.out.println(cylinder);
     }
 }

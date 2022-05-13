@@ -1,4 +1,4 @@
-package ss6.bai_tap;
+package ss6.bai_tap.bai_2;
 
 import java.util.Arrays;
 
@@ -29,13 +29,15 @@ public class Point2D {
     public void setY(float y) {
         this.y = y;
     }
-    public void setXY(float x,float y){
+
+    public void setXY(float x, float y) {
         this.x = x;
         this.y = y;
     }
-    public float[] getXY(){
-        float [] array = new float[2];
-        return  array = new float[]{x, y};
+
+    public float[] getXY() {
+        float[] array = new float[2];
+        return array = new float[]{x, y};
     }
 
     @Override
@@ -43,7 +45,7 @@ public class Point2D {
         return "Point2D{ " +
                 " x=" + x +
                 ", y=" + y +
-                ", array = " + Arrays.toString(getXY())+
+                ", array = " + Arrays.toString(getXY()) +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package ss6.bai_tap;
+package ss6.bai_tap.bai_1;
 
 public class Cylinder extends Circle {
     private double height;
@@ -42,8 +42,8 @@ public class Cylinder extends Circle {
 
     @Override
     public String toString() {
-        return "+ Lớp con Cylinder : " + '\n'+
-                "+ height= " + height + '\n'+
+        return "+ Lớp con Cylinder : " + '\n' +
+                "+ height= " + height + '\n' +
                 "+ thể tích = " + getVolume() + '\n' +
                 "+ diện tích xung quanh = " + getSurroundingArea() + '\n' +
                 "+ diện tích toàn phần = " + getTotalArea() + '\n' +
