@@ -1,4 +1,6 @@
-package ss5.bai_tap;
+package ss5.bai_tap.bai_1;
+
+import ss5.bai_tap.bai_1.Circle;
 
 import java.util.Scanner;
 

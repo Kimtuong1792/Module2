@@ -46,14 +46,17 @@ public class MoveablePoint extends Point {
 
     @Override
     public String toString() {
-        return "MoveablePoint{" +
-                "xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
+        return "MoveablePoint : " +'\n'+
+                "xSpeed=" + xSpeed +'\n'+
+                "ySpeed=" + ySpeed + '\n'+
                 "and which is a subclass of "
                 + super.toString()+
                 '}';
     }
     public MoveablePoint move(){
+        setX(this.getX() + this.xSpeed);
+        setY(this.getY() + this.xSpeed);
         return this;
+
     }
 }

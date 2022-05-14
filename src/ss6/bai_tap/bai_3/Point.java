@@ -45,9 +45,9 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point " +
-                "x=" + x +
-                ", y=" + y +
-                ", getXY = " + Arrays.toString(getXY());
+        return "Point " + '\n'+
+                "x=" + x + '\n'+
+                "y=" + y + '\n'+
+                "getXY = " + Arrays.toString(getXY());
     }
 }

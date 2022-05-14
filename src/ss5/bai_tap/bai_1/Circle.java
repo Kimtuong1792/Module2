@@ -1,4 +1,4 @@
-package ss5.bai_tap;
+package ss5.bai_tap.bai_1;
 
 public class Circle {
     private double radius = 1.0;
@@ -31,6 +31,6 @@ public class Circle {
     }
 
     public double getArea() {
-        return Math.pow(radius,2) * 3.14;
+        return Math.pow(radius,2) * Math.PI;
     }
 }

@@ -43,9 +43,8 @@ public class Point2D {
     @Override
     public String toString() {
         return "Point2D{ " +
-                " x=" + x +
-                ", y=" + y +
-                ", array = " + Arrays.toString(getXY()) +
+                " (x,y) " + "(" + x +", " + y +")"+ '\n'+
+                " array = " + Arrays.toString(getXY()) +
                 '}';
     }
 }
