@@ -151,11 +151,7 @@ public class TestPerson {
         } else {
             System.out.println("id ko có");
         }
-
-
     }
-
-
     public static void main(String[] args) {
         do {
             System.out.println("---------product Management--------");

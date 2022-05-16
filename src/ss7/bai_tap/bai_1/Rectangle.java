@@ -24,8 +24,7 @@ public class Rectangle extends Shape implements Resizeable {
         return width;
     }
 
-    public void setWidth(double width)
-    {
+    public void setWidth(double width) {
         this.width = width;
     }
 
@@ -54,8 +53,8 @@ public class Rectangle extends Shape implements Resizeable {
                 + getWidth()
                 + " and length="
                 + getLength();
-                //+ ", which is a subclass of "
-                //+ super.toString();
+        //+ ", which is a subclass of "
+        //+ super.toString();
     }
 
     @Override
