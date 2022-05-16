@@ -1,4 +1,6 @@
-package Bai_tap_them;
+package Bai_tap_them.bai_1;
+
+import Bai_tap_them.bai_1.Product;
 
 import java.util.Scanner;
 

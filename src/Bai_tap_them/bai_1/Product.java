@@ -1,4 +1,4 @@
-package Bai_tap_them;
+package Bai_tap_them.bai_1;
 
 public class Product {
     private int id;
