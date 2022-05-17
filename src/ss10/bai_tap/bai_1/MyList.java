@@ -19,8 +19,15 @@ public class MyList<E> {
             throw new IllegalArgumentException("capacity: "+capacity);
         }
     }
+    private void ensureCapacity(int minCapacity){
+        if(minCapacity>=0){
+            int newSize = this.elements.length + minCapacity;
+            elements = Arrays.copyOf(elements,newSize);
+        }else{
+            throw new IllegalArgumentException("minCapacity: "+minCapacity);
+        }
 
-
+    }
     public void add(int index, E element){
         if(index > elements.length){
             throw new IllegalArgumentException("index: "+ index);
@@ -40,6 +47,7 @@ public class MyList<E> {
         }
     }
     public int size(){
+
         return this.size;
     }
     public void clear(){
@@ -56,15 +64,7 @@ public class MyList<E> {
         size++;
         return true;
     }
-    private void ensureCapacity(int minCapacity){
-        if(minCapacity>=0){
-            int newSize = this.elements.length + minCapacity;
-            elements = Arrays.copyOf(elements,newSize);
-        }else{
-            throw new IllegalArgumentException("minCapacity: "+minCapacity);
-        }
 
-    }
     public E get(int index){
         E element = null;
         for(int i = 0;i<elements.length;i++){
