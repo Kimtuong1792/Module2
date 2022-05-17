@@ -28,7 +28,7 @@ public class TennisGame {
 
             }
         } else if (m_score1 >= 4 || m_score2 >= 4) {
-            score = kiemTra(m_score1, m_score2);
+            score = check(m_score1, m_score2);
         } else {
             for (int i = 1; i < 3; i++) {
                 if (i == 1) {
@@ -56,7 +56,7 @@ public class TennisGame {
         return score;
     }
 
-    private static String kiemTra(int m_score1, int m_score2) {
+    private static String check(int m_score1, int m_score2) {
         String score;
         int minusResult = m_score1 - m_score2;
         if (minusResult == 1) score = "Advantage player1";
