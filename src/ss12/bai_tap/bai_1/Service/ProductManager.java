@@ -101,6 +101,22 @@ public class ProductManager implements IProductService {
     }
 
     @Override
+    public void sortProduct() {
+
+        System.out.println("1. sắp xếp tăng dần theo giá");
+        System.out.println("2. sắp xếp giảm dần theo giá");
+        int choose = Integer.parseInt(scanner.nextLine());
+        switch (choose){
+            case 1:
+               productList.sort(new SortUpDescending());
+               break;
+            case 2:
+                productList.sort(new SortDownDescending());
+                break;
+        }
+    }
+
+    @Override
     public void search() {
         int countCheck = 0;
         System.out.println("nhập tên cần tìm kiếm");

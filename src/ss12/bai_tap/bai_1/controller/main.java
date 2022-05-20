@@ -9,7 +9,7 @@ public class main {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public main(String[] args) {
         IProductService productService = new ProductManager();
 
         do {
@@ -19,7 +19,8 @@ public class main {
             System.out.println("3. Search Product");
             System.out.println("4. Delete Product");
             System.out.println("5. Update Product");
-            System.out.println("6. Exit");
+            System.out.println("6. Sort Product");
+            System.out.println("7. Exit");
             System.out.println("Choose options: ");
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -40,6 +41,9 @@ public class main {
                     productService.updateProduct();
                     break;
                 case 6:
+                    productService.sortProduct();
+                    break;
+                case 7:
                     System.exit(0);
             }
         } while (true);
