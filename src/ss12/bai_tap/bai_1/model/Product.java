@@ -1,15 +1,16 @@
-package ss12.bai_tap.bai_1;
+package ss12.bai_tap.bai_1.model;
 
-public class Product {
+public class Product implements Comparable{
     private String name;
     private int id;
     private double price;
     private int quantity;
+    private String producer;
 
     public Product() {
     }
 
-    public Product(String name, int id, double price, int quantity) {
+    public Product(String name, int id, double price, int quantity,String producer) {
         this.name = name;
         this.id = id;
         this.price = price;
@@ -56,5 +57,10 @@ public class Product {
                 ", price=" + price +
                 ", quantity=" + quantity +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
