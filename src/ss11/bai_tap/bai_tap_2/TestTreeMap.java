@@ -9,17 +9,17 @@ public class TestTreeMap {
         Scanner scanner = new Scanner(System.in);
         System.out.println("input your string");
         String str = scanner.nextLine();
-        Map< String , Integer> map = new TreeMap<>();
+        Map<String, Integer> map = new TreeMap<>();
         String[] word = str.toLowerCase().split(" ");
         int value = 1;
         for (String s : word) {
             if (!map.containsKey(s)) {
-
                 map.put(s, value);
+
             } else {
                 map.replace(s, (value + 1));
+                value++;
             }
-
         }
         System.out.println(map);
     }

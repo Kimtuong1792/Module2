@@ -12,10 +12,12 @@ public class Demerging implements Comparable<Demerging> {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 

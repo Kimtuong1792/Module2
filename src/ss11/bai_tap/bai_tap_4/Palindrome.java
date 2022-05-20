@@ -1,9 +1,6 @@
 package ss11.bai_tap.bai_tap_4;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class Palindrome {
     public static void main(String[] args) {
