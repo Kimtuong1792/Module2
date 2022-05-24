@@ -37,8 +37,10 @@ public class EmployeeManager {
         employmentLists.add(new ProductionStaff("tran van tinh", 1992, "hcm", 200));
 
         list.put(1,(new Worker("le van Hung", 1995, "quang ngai", 30)));
-        list.put(2,( new Worker("le van An", 1997, "quang ngai", 20)));
+        list.put(6,( new Worker("le van An", 1997, "quang ngai", 20)));
         list.put(3,( new Worker("le van Duc", 1999, "quang ngai", 30)));
+        list.put(2,(new Manager("tran van Loc", 1990, "HN", 70000, 1.3)));
+        list.put(5,(new ProductionStaff("le van Kha", 2001, "ĐN", 100)));
 
 
     }
@@ -62,6 +64,7 @@ public class EmployeeManager {
         System.out.println(" 1. print Worker");
         System.out.println(" 2. print Manager");
         System.out.println(" 3. print ProductionStaff");
+
         int choose = Integer.parseInt(scanner.nextLine());
         switch (choose) {
             case 1:
@@ -85,6 +88,13 @@ public class EmployeeManager {
                     }
                 }
                 break;
+
+
+        }
+    }
+    public static void displayMap(){
+        for (Integer item: list.keySet()) {
+            System.out.println("nhân viên: " + item+ " . "+ list.get(item));
         }
     }
 
@@ -134,6 +144,9 @@ public static void sort(){
         }
 
 }
+public void findById(){
+        
+}
     public static void main(String[] args) {
         do {
             System.out.println(" print employee list");
@@ -142,7 +155,8 @@ public static void sort(){
             System.out.println(" 3. print all ");
             System.out.println(" 4. sort in salary");
             System.out.println(" 5. Sort by request");
-            System.out.println(" 6. Exit");
+            System.out.println(" 6. display by Map");
+            System.out.println(" 7. Exit");
             System.out.println("Choose options : ");
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -163,6 +177,9 @@ public static void sort(){
                 case 5:
                    sort();
                    displayList();
+                    break;
+                case 6:
+                    displayMap();
                     break;
 
 

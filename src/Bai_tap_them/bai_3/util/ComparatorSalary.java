@@ -13,9 +13,9 @@ public class ComparatorSalary implements Comparator<Staff> {
       }else if(o1.employmentSalary()<o2.employmentSalary()){
           return -1;
       }else {
-          if (o1.getName().compareTo(o2.getName()) >0) {
+          if (o1.getName().compareTo(o2.getName()) <0) {
               return -1;
-          } else if (o1.getName().compareTo(o2.getName()) < 0) {
+          } else if (o1.getName().compareTo(o2.getName()) > 0) {
               return 1;
           } else {
               return 0;
