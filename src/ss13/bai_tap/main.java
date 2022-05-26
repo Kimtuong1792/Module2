@@ -17,13 +17,15 @@ public class main {
             LinkedList<Character> list = new LinkedList<>();
             //thêm kí tự thứ i vào trong list
             list.add(string.charAt(i));
-           // System.out.println(string.charAt(i));
+           //System.out.println(string.charAt(i));
             for (int j = i + 1; j < string.length(); j++) { //vòng lặp bên trong
                 //Kiểm tra kí tự tiếp theo có lớn hơn kí tự cuối cùng trong list hay không
                 if (string.charAt(j) > list.getLast()) {
                     //Nếu có thì thêm vào trong list
+                    //System.out.println(string.charAt(j));
+                    System.out.println(list.getLast());
                     list.add(string.charAt(j));
-                    //System.out.println(list.getLast());
+
                     //System.out.println(string.charAt(i));
                 }
             }
@@ -36,7 +38,7 @@ public class main {
             list.clear();
         }
 
-        // Hiển thị chuỗi tăng dần dài nhất
+         //Hiển thị chuỗi tăng dần dài nhất
         for (Character ch: max) { // 1 vòng lặp
             System.out.print(ch); // 1 câu lệnh
         }
