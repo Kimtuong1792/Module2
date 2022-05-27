@@ -2,7 +2,7 @@ package ss13.bai_tap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
