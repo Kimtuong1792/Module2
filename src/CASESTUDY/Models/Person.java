@@ -1,6 +1,7 @@
 package CASESTUDY.Models;
 
 public abstract class Person {
+    private int id;
     private String name;
     private String born;
     private boolean gender;
@@ -11,14 +12,26 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String name, String born, boolean gender,
+    public Person(int id,String name, String born, boolean gender,
                   long identity, long numberPhone, String email) {
+        this.id = id;
         this.name = name;
         this.born = born;
         this.gender = gender;
         this.identity = identity;
         this.numberPhone = numberPhone;
         this.email = email;
+    }
+
+    public Person(String name, String born, boolean gender, long identity, long numberPhone, String email) {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,7 +62,7 @@ public abstract class Person {
         return identity;
     }
 
-    public void setIdentity(long identity) {
+    public void setIdentity(int identity) {
         this.identity = identity;
     }
 
@@ -57,7 +70,7 @@ public abstract class Person {
         return numberPhone;
     }
 
-    public void setNumberPhone(long numberPhone) {
+    public void setNumberPhone(int numberPhone) {
         this.numberPhone = numberPhone;
     }
 
@@ -71,13 +84,13 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
+        return "Mã nhân viên = "+ id +
+                ", name='" + name + '\'' +
                 ", born='" + born + '\'' +
                 ", gender=" + gender +
                 ", identity=" + identity +
                 ", numberPhone=" + numberPhone +
                 ", email='" + email + '\'' +
-                '}';
+                ',';
     }
 }

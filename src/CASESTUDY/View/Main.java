@@ -9,25 +9,26 @@ public class Main {
 
     public static void main(String[] args) {
 
+        FuramaController furamaController = new FuramaController();
 
         do {
-            FuramaController.displayMainMenu();
+            furamaController.displayMainMenu();
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    FuramaController.displayEmployee();
+                    furamaController.displayEmployee();
                     break;
                 case 2:
-                    FuramaController.displayCustomerManagement();
+                    furamaController.displayCustomerManagement();
                     break;
                 case 3:
-                    FuramaController.facilityManagement();
+                    furamaController.facilityManagement();
                     break;
                 case 4:
-                    FuramaController.bookingManagement();
+                    furamaController.bookingManagement();
                     break;
                 case 5:
-                    FuramaController.promotionManagement();
+                    furamaController.promotionManagement();
                     break;
                 case 6:
                     System.exit(0);

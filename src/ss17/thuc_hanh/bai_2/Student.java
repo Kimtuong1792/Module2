@@ -1,17 +1,19 @@
-package ss16.bai_tap.bai_2;
+package ss17.thuc_hanh.bai_2;
 
-public class Country {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private int id;
-    private String code;
     private String name;
+    private String address;
 
-    public Country() {
+    public Student() {
     }
 
-    public Country(int id, String code, String name) {
+    public Student(int id, String name, String address) {
         this.id = id;
-        this.code = code;
         this.name = name;
+        this.address = address;
     }
 
     public int getId() {
@@ -22,14 +24,6 @@ public class Country {
         this.id = id;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public String getName() {
         return name;
     }
@@ -38,12 +32,20 @@ public class Country {
         this.name = name;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
-        return "Country{" +
+        return "Student{" +
                 "id=" + id +
-                ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

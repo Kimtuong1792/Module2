@@ -14,20 +14,22 @@ public class Customer extends Person{
         this.address = address;
     }
 
-    public Customer(String name, String born, boolean gender, long identity, long numberPhone, String email, double idCode, String typeOfGuest, String address) {
-        super(name, born, gender, identity, numberPhone, email);
-        this.idCode = idCode;
+    public Customer(int id,
+                    String name,
+                    String born,
+                    boolean gender,
+                    long identity,
+                    long numberPhone,
+                    String email,
+                    String typeOfGuest,
+                    String address) {
+        super(id,name, born, gender, identity, numberPhone, email);
+
         this.typeOfGuest = typeOfGuest;
         this.address = address;
     }
 
-    public double getIdCode() {
-        return idCode;
-    }
 
-    public void setIdCode(double idCode) {
-        this.idCode = idCode;
-    }
 
     public String getTypeOfGuest() {
         return typeOfGuest;
@@ -47,7 +49,7 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return super.toString() +
                 "idCode=" + idCode +
                 ", typeOfGuest='" + typeOfGuest + '\'' +
                 ", address='" + address + '\'' +

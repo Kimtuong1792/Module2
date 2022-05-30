@@ -1,6 +1,6 @@
 package CASESTUDY.Models;
 
-public class House extends Facility implements Standard {
+public class House extends Facility  {
     public House() {
     }
 
@@ -12,13 +12,4 @@ public class House extends Facility implements Standard {
         return "House " +
                 super.toString();}
 
-    @Override
-    public void roomStandard() {
-
-    }
-
-    @Override
-    public void numberOfFloors() {
-
-    }
 }
