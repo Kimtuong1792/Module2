@@ -14,7 +14,9 @@ public class FuramaController {
     public CustomerServiceImpl customerService = new CustomerServiceImpl();
     public FacilityServiceImpl facilityService = new FacilityServiceImpl();
 
+
     public void displayMainMenu() {
+        do{
         System.out.println("1.Employee Management");
         System.out.println("2.Customer Management");
         System.out.println("3.Facility Management ");
@@ -22,7 +24,31 @@ public class FuramaController {
         System.out.println("5.Promotion Management");
         System.out.println("6.Exit");
         System.out.println("Choose options : ");
-    }
+        int choose = Integer.parseInt(scanner.nextLine());
+        switch (choose) {
+            case 1:
+               displayEmployee();
+                break;
+            case 2:
+               displayCustomerManagement();
+                break;
+            case 3:
+                facilityManagement();
+                break;
+            case 4:
+                bookingManagement();
+                break;
+            case 5:
+                promotionManagement();
+                break;
+            case 6:
+                System.exit(0);
+            default:
+                System.out.println("Please input menu correct again!!!");
+        }
+    } while (true);
+
+}
 
     public void displayEmployee() {
         do {
@@ -96,20 +122,52 @@ public class FuramaController {
         switch (choose) {
             case 1:
                 System.out.println("1. Display list facility");
+                facilityService.display();
                 break;
             case 2:
                 System.out.println("2. Add new facility");
-                facilityService.addNewVilla();
+                facilityMenu();
                 break;
             case 3:
                 System.out.println("3. Display list facility maintenance");
                 break;
             case 4:
                 System.out.println("4. Return main menu");
+                displayMainMenu();
                 break;
 
         }
     }
+
+    public void facilityMenu() {
+        System.out.println("1. add new Villa");
+        System.out.println("2. Add new house");
+        System.out.println("3. Add new room");
+        System.out.println("4. Return main menu");
+        System.out.println("Choose options : ");
+        int choose = Integer.parseInt(scanner.nextLine());
+        switch (choose) {
+            case 1:
+                System.out.println("1. add new Villa");
+                facilityService.addNewVilla();
+                facilityMenu();
+                break;
+            case 2:
+                System.out.println("2. Add new house");
+                facilityService.addNewHouse();
+                break;
+            case 3:
+                System.out.println("3. Add new room");
+                facilityService.addNewRoom();
+                break;
+            case 4:
+                System.out.println("4. Return main menu");
+                facilityManagement();
+                break;
+
+        }
+    }
+
 
     public void bookingManagement() {
         System.out.println("1. Add new booking");
@@ -123,6 +181,7 @@ public class FuramaController {
         switch (choose) {
             case 1:
                 System.out.println("1. Add new booking");
+
                 break;
             case 2:
                 System.out.println("2. Display list booking");
