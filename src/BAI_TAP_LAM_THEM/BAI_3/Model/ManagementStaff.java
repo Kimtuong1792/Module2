@@ -43,7 +43,23 @@ public class ManagementStaff extends Person {
     }
 
     @Override
+    public String toString() {
+        return super.toString() +
+                "basicSalary=" + basicSalary +
+                ", coefficients=" + coefficients +
+                '}';
+    }
+
+    @Override
     public String getInFor() {
-        return null;
+        return String.format("%s,%s,%s,%s,%s,%s,%s"
+                , super.getId()
+                , super.getEmployeeCode()
+                , super.getName()
+                , super.getBirthday()
+                , super.getAddress()
+                , this.getBasicSalary()
+                , this.getCoefficients()
+        );
     }
 }

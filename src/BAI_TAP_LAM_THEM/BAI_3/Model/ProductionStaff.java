@@ -20,8 +20,40 @@ public class ProductionStaff extends Person {
         this.price = price;
     }
 
+    public int getNumberProduct() {
+        return numberProduct;
+    }
+
+    public void setNumberProduct(int numberProduct) {
+        this.numberProduct = numberProduct;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "numberProduct=" + numberProduct +
+                ", price=" + price +
+                '}';
+    }
+
     @Override
     public String getInFor() {
-        return null;
+        return String.format("%s,%s,%s,%s,%s,%s,%s"
+                , super.getId()
+                , super.getEmployeeCode()
+                , super.getName()
+                , super.getBirthday()
+                , super.getAddress()
+                , this.getNumberProduct()
+                , this.getPrice()
+                );
     }
 }

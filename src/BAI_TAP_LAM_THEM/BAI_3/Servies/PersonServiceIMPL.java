@@ -26,10 +26,10 @@ public class PersonServiceIMPL implements IPersonService {
         personList.clear();
         List<String[]> listStr = ReadAndWrite.readFile("src\\BAI_TAP_LAM_THEM\\BAI_3\\data\\nhan_vien.csv");
         for (String[] item : listStr) {
-            if (item[1].equals("NVQL")) {
+            if (item[1].substring(0,4).equals("NVQL")) {
                 personList.add(new ManagementStaff(Integer.parseInt(item[0]), item[1], item[2], LocalDate.parse(item[3]), item[4], Double.parseDouble(item[5]),
                         Double.parseDouble(item[6])));
-            } else {
+            } else if (item[1].substring(0,4).equals("NVSX")){
                 personList.add(new ProductionStaff(Integer.parseInt(item[0]), item[1], item[2], LocalDate.parse(item[3]), item[4], Integer.parseInt(item[5]),
                         Double.parseDouble(item[6])));
             }
@@ -46,18 +46,29 @@ public class PersonServiceIMPL implements IPersonService {
     @Override
     public void addNewProduct() {
         readFile();
-        int id = 0;
-        int max = personList.get(0).getId();
-        if (personList.size() == 0) {
-            id = 1;
-        } else {
-            for (int i = 1; i < personList.size(); i++) {
-                if (personList.get(i).getId() > max) {
-                    max = personList.get(i).getId();
-                }
+
+//        int id = personList.get(personList.size()-1).getId() + 1;
+
+        int id = 1;
+        int max = id;
+
+        for (int i = 0; i < personList.size(); i++) {
+            if (max < personList.get(i).getId()) {
+                max= personList.get(i).getId();
             }
-            id = max + 1;
         }
+
+        id = max + 1;
+//        if (personList.size() == 0) {
+//            id = 1;
+//        } else {
+//            for (int i = 1; i < personList.size(); i++) {
+//                if (personList.get(i).getId() > max) {
+//                    max = personList.get(i).getId();
+//                }
+//            }
+//            id = max + 1;
+//        }
 
         System.out.println("Nhập mã nhân viên");
         String employeeCode = RegexData.regexStr(scanner.nextLine(),REGEX_PRODUCE,"Nhập theo định dạng NVSX-XXX");
@@ -87,17 +98,13 @@ public class PersonServiceIMPL implements IPersonService {
     @Override
     public void addNewManagement() {
         readFile();
-        int id = 0;
-        int max = 0;
-        if (personList.size() == 0) {
-            id = 1;
-        } else {
-            for (int i = 1; i < personList.size(); i++) {
-                if (personList.get(i).getId() > max) {
-                    max = personList.get(i).getId();
-                }
+        int id = 1;
+        int max = id;
+
+        for (int i = 0; i < personList.size(); i++) {
+            if (max < personList.get(i).getId()) {
+                max= personList.get(i).getId();
             }
-            id = max + 1;
         }
 
         System.out.println("Nhập mã nhân viên");
@@ -128,8 +135,9 @@ public class PersonServiceIMPL implements IPersonService {
     @Override
     public void display() {
         readFile();
-        for (Person person : personList) {
-            System.out.println(person);
+        System.out.println("display personlist");
+        for (Person item: personList) {
+            System.out.println(item);
         }
     }
 

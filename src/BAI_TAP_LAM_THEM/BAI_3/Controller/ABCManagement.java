@@ -8,8 +8,9 @@ public class ABCManagement {
     static Scanner scanner = new Scanner(System.in);
     static PersonServiceIMPL personServiceIMPL = new PersonServiceIMPL();
 
-    public static int checkException(int inputChoose) {
+    public static int checkException() {
         boolean check = false;
+        int inputChoose = 0;
         do {
             try {
                 inputChoose = Integer.parseInt(scanner.nextLine());
@@ -60,8 +61,8 @@ public class ABCManagement {
             System.out.println("1. Thêm mới nhân viên quản lý");
             System.out.println("2. Thêm mới nhân viên sản xuất");
             System.out.println("3. Quay lại menu chính");
-            int choose = Integer.parseInt(scanner.nextLine());
-            switch (checkException(choose)) {
+            int choose = checkException();
+            switch (choose) {
                 case 1:
                     personServiceIMPL.addNewManagement();
                     break;

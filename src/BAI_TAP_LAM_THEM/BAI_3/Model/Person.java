@@ -60,4 +60,15 @@ public abstract class Person {
         this.address = address;
     }
    public abstract String getInFor();
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", employeeCode='" + employeeCode + '\'' +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
