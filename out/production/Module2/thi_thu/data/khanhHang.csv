@@ -1,3 +1,12 @@
+KHVN-00001,a1`,Kinh doanh,32.0
+KHVN-00002,a2,Sản xuất,3232.0
 
-Person{IDCode='KHVN-10000', Name='vi'}typeCustomer='Kinh doanh', consumption=100.0}
-Person{IDCode='KHNN-01011', Name='join'}country='vn'}
+KHVN-00003,a3,Sản xuất,23.0
+KHVN-00003,a3,Sản xuất,23.0
+KHVN-00004,a4,Kinh doanh,432432.0
+KHVN-00005,a5,Kinh doanh,32.0
+KHVN-00005,a5,Kinh doanh,32.0
+KHVN-00006,a6,Kinh doanh,31.0
+KHVN-00007,a7,Kinh doanh,21.0
+KHVN-00007,a7,Kinh doanh,21.0
+KHVN-00009,a9,Kinh doanh,12.0

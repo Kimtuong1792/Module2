@@ -2,8 +2,11 @@ package CASESTUDY.Services.IMPL;
 
 import CASESTUDY.Models.Employee;
 import CASESTUDY.Services.EmployeeService;
+import thi_thu.model.CustomerVN;
+import thi_thu.util.ReadAndWrite;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -47,11 +50,19 @@ public class EmploymentServiceImpl implements EmployeeService {
 
         Employee employee = new Employee(id, name, born, gender, identity, numberPhone, email, level, location, salary);
         employeeList.add(employee);
+        writeFile();
 
+    }
+    public void writeFile() {
+        for (Employee item : employeeList) {
+            String line = item.getToString();
+            ReadAndWrite.writeFile("src/CASESTUDY/data/employee.csv", line);
+        }
     }
 
     @Override
     public void edit() {
+
         System.out.println("nhập id bạn muốn sửa thông tin");
         int id = Integer.parseInt(scanner.nextLine());
         boolean check = true;
@@ -94,12 +105,14 @@ public class EmploymentServiceImpl implements EmployeeService {
 
 }
 
+
     @Override
     public void display() {
+        List<String[]> list = ReadAndWrite.readFile("src/CASESTUDY/data/employee.csv");
         System.out.println("display infomration :");
-        for (Employee employee : employeeList) {
+        for (String[] item : list) {
 
-            System.out.println(employee.toString());
+            System.out.println(Arrays.toString(item));
 
         }
 

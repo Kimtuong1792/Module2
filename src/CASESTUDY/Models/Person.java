@@ -50,7 +50,7 @@ public abstract class Person {
         this.born = born;
     }
 
-    public boolean isGender() {
+    public boolean getGender() {
         return gender;
     }
 
@@ -81,10 +81,11 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+    public abstract String getToString();
 
     @Override
     public String toString() {
-        return "Mã nhân viên = "+ id +
+        return "Mã id = "+ id +
                 ", name='" + name + '\'' +
                 ", born='" + born + '\'' +
                 ", gender=" + gender +

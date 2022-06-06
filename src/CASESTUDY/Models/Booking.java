@@ -20,6 +20,11 @@ public class Booking {
         this.typeService = typeService;
     }
 
+
+
+    public Booking(String id, String startDate, String endDate, String idCode, Customer customer, Customer facility) {
+    }
+
     public String getCodeBooking() {
         return codeBooking;
     }

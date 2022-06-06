@@ -8,6 +8,21 @@ public class Customer extends Person{
     public Customer() {
     }
 
+    @Override
+    public String getToString() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s"
+                ,super.getId()
+                , super.getName()
+                ,super.getBorn()
+                ,super.getGender()
+                ,super.getIdentity()
+                ,super.getNumberPhone()
+                ,super.getEmail()
+                ,this.typeOfGuest
+                ,this.getIdCode()
+                ,this.getAddress());
+    }
+
     public Customer(double idCode, String typeOfGuest, String address) {
         this.idCode = idCode;
         this.typeOfGuest = typeOfGuest;
@@ -29,7 +44,13 @@ public class Customer extends Person{
         this.address = address;
     }
 
+    public double getIdCode() {
+        return idCode;
+    }
 
+    public void setIdCode(double idCode) {
+        this.idCode = idCode;
+    }
 
     public String getTypeOfGuest() {
         return typeOfGuest;

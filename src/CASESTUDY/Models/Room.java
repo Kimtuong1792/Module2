@@ -6,6 +6,11 @@ public class Room extends Facility {
     public Room() {
     }
 
+    @Override
+    public String getToString() {
+        return null;
+    }
+
     public Room(String freeService) {
         this.freeService = freeService;
     }
@@ -33,5 +38,10 @@ public class Room extends Facility {
         return super.toString() +
                 "freeService='" + freeService + '\'' +
                 '}';
+    }
+
+    @Override
+    public String getIdFacility() {
+        return null;
     }
 }

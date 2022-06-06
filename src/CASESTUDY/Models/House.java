@@ -1,10 +1,23 @@
 package CASESTUDY.Models;
 
-public class House extends Facility  {
+public abstract class House extends Facility  {
     private String standard;
     private int floor;
 
     public House() {
+    }
+
+    @Override
+    public String getToString() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s"
+                ,super.getId()
+                , super.getNameService()
+                ,super.getArea()
+                ,super.getRentalCosts()
+                ,super.getMaximumNumberOfPeople()
+                ,super.getRentalType()
+                ,this.getStandard()
+                ,this.getFloor());
     }
 
     public House(String standard, int floor) {

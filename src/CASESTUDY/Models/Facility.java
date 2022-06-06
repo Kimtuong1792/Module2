@@ -66,6 +66,7 @@ public abstract class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+    public abstract String getToString();
 
     @Override
     public String toString() {
@@ -77,4 +78,6 @@ public abstract class Facility {
                 ", rentalType='" + rentalType + '\'' +
                 '}';
     }
+
+    public abstract String getIdFacility();
 }

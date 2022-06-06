@@ -8,6 +8,21 @@ public class Employee extends Person {
     public Employee() {
     }
 
+    @Override
+    public String getToString() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s"
+                ,super.getId()
+                , super.getName()
+                ,super.getBorn()
+                ,super.getGender()
+                ,super.getIdentity()
+                ,super.getNumberPhone()
+                ,super.getEmail()
+                ,this.getLevel()
+                ,this.getLocation()
+                ,this.getSalary());
+    }
+
     public Employee(String level, String location, double salary) {
         this.level = level;
         this.location = location;

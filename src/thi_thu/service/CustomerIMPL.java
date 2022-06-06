@@ -30,6 +30,7 @@ public class CustomerIMPL implements Customer {
 
     @Override
     public void addNewVN() {
+        readFiles();
         String idCode = idCodeVN();
         System.out.println("nhập tên khách hàng");
         String name = scanner.nextLine();
@@ -73,10 +74,13 @@ public class CustomerIMPL implements Customer {
     }
 
     public void writeFile() {
+
+        String line = null;
         for (CustomerVN customer : customerVNList) {
-            String line = customer.getToString();
+            line = customer.getToString();
             ReadAndWrite.writeFile("src/thi_thu/data/khanhHang.csv", line);
         }
+
     }
 
     @Override
@@ -86,6 +90,7 @@ public class CustomerIMPL implements Customer {
 //            CustomerInternational customerInternational = new CustomerInternational(item[0], item[1], item[2]);
 //            customerInternationalList.add(customerInternational);
 //        }
+        readFiles();
         String idCode = idCodeNN();
         System.out.println("nhập tên khách hàng");
         String name = scanner.nextLine();
@@ -94,6 +99,8 @@ public class CustomerIMPL implements Customer {
 
         CustomerInternational customerInternational = new CustomerInternational(idCode, name, country);
         customerInternationalList.add(customerInternational);
+
+        //ReadAndWrite.writeFile("src/thi_thu/data/khanhHang.csv", customerInternational.getToString());
         writeFileNN();
         System.out.println("thêm mới thành công");
     }
@@ -102,6 +109,14 @@ public class CustomerIMPL implements Customer {
         for (CustomerInternational customer : customerInternationalList) {
             String line = customer.getToString();
             ReadAndWrite.writeFile("src/thi_thu/data/khanhHang.csv", line);
+        }
+
+    }
+    public void readFileVN(){
+        List<String[]> strings =  ReadAndWrite.readFile("src/thi_thu/data/khanhHang.csv");
+        for (String[] item : strings) {
+            CustomerInternational customerInternational = new CustomerInternational(item[0], item[1], item[2]);
+           customerInternationalList.add(customerInternational);
         }
     }
     // String line = "";

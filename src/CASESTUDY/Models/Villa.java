@@ -1,11 +1,25 @@
 package CASESTUDY.Models;
 
-public class Villa extends Facility {
+public  abstract class Villa extends Facility {
     private double poolArea;
     private String standardVilla;
     private int floor;
 
     public Villa() {
+    }
+
+    @Override
+    public String getToString() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s"
+                ,super.getId()
+                , super.getNameService()
+                ,super.getArea()
+                ,super.getRentalCosts()
+                ,super.getMaximumNumberOfPeople()  
+                ,super.getRentalType()
+                ,this.getPoolArea()
+                ,this.getStandardVilla()
+                ,this.getFloor());
     }
 
     public Villa(double poolArea, String standardVilla, int floor) {

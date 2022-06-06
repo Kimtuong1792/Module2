@@ -32,9 +32,6 @@ public class RegexData {
 
     }
 
-    public static void main(String[] args) {
-        System.out.println(idVilla("(SVVL)[-][\\d]{4}"));
-    }
 
 
     public static String idRoom(String regex) {

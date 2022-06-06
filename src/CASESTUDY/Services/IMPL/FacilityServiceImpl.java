@@ -1,11 +1,9 @@
 package CASESTUDY.Services.IMPL;
 
-import CASESTUDY.Models.Facility;
-import CASESTUDY.Models.House;
-import CASESTUDY.Models.Room;
-import CASESTUDY.Models.Villa;
+import CASESTUDY.Models.*;
 import CASESTUDY.Services.FacilityService;
 import CASESTUDY.until.RegexData;
+import thi_thu.util.ReadAndWrite;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -52,9 +50,16 @@ public class FacilityServiceImpl implements FacilityService {
         double poolArea = Double.parseDouble(inputArea());
 
         int numberFloor = Integer.parseInt(inputRentalCosts());
-        Villa villa = new Villa(id, nameService, area, rentalCosts, maximumNumberOfPeople, rentalType, poolArea, standardVilla, numberFloor);
-        facilityIntegerMap.put(villa, 0);
+//        Villa villa = new Villa(id, nameService, area, rentalCosts, maximumNumberOfPeople, rentalType, poolArea, standardVilla, numberFloor);
+//        facilityIntegerMap.put(villa, 0);
         System.out.println("đã thêm mới thành công");
+
+    }
+    public void writeFile() {
+        for (Map.Entry<Facility, Integer> element : facilityIntegerMap.entrySet()) {
+            String line = element.toString();
+            ReadAndWrite.writeFile("src/CASESTUDY/data/villa.csv", line);
+        }
     }
 
     private String inputIDVilla()  {
@@ -65,7 +70,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     private String inputIDRoom() {
         System.out.println("nhập mã dịch vụ");
-        return RegexData.idRoom(REGEX_ID_ROOM);
+        return RegexData.idRoom( REGEX_ID_ROOM);
     }
 
     private String inputIDHouse() {
@@ -122,11 +127,11 @@ public class FacilityServiceImpl implements FacilityService {
         String rentalType = rentalType();
 
         String standardHouse = standard();
-
-        int floor = Integer.parseInt(inputRentalCosts());
-        House house = new House(id, nameService, area, rentalCosts, maximumNumberOfPeople, rentalType, standardHouse, floor);
-        facilityIntegerMap.put(house, 0);
-        System.out.println("đã thêm mới thành công");
+//
+//        int floor = Integer.parseInt(inputRentalCosts());
+//        House house = new House(id, nameService, area, rentalCosts, maximumNumberOfPeople, rentalType, standardHouse, floor);
+//        facilityIntegerMap.put(house, 0);
+//        System.out.println("đã thêm mới thành công");
 
     }
 
