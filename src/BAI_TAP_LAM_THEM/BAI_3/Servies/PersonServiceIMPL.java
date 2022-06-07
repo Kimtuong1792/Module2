@@ -20,16 +20,18 @@ public class PersonServiceIMPL implements IPersonService {
     public static final String REGEX_MANAGER = "^NVQL-\\d{3}$";
     public static final String REGEX_PRODUCE = "^NVSX-\\d{3}$";
     public static final String REGEX_POSITIVE_NUMBER = "[1-9][0-9]*";
+    public static final String  REGEX_STR = "[A-Z][a-z]+";
+
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public void readFile() {
         personList.clear();
         List<String[]> listStr = ReadAndWrite.readFile("src\\BAI_TAP_LAM_THEM\\BAI_3\\data\\nhan_vien.csv");
         for (String[] item : listStr) {
-            if (item[1].substring(0,4).equals("NVQL")) {
+            if (item[1].startsWith("NVQL")) {
                 personList.add(new ManagementStaff(Integer.parseInt(item[0]), item[1], item[2], LocalDate.parse(item[3]), item[4], Double.parseDouble(item[5]),
                         Double.parseDouble(item[6])));
-            } else if (item[1].substring(0,4).equals("NVSX")){
+            } else if (item[1].contains("NVSX")){
                 personList.add(new ProductionStaff(Integer.parseInt(item[0]), item[1], item[2], LocalDate.parse(item[3]), item[4], Integer.parseInt(item[5]),
                         Double.parseDouble(item[6])));
             }
@@ -52,9 +54,9 @@ public class PersonServiceIMPL implements IPersonService {
         int id = 1;
         int max = id;
 
-        for (int i = 0; i < personList.size(); i++) {
-            if (max < personList.get(i).getId()) {
-                max= personList.get(i).getId();
+        for (Person person : personList) {
+            if (max < person.getId()) {
+                max = person.getId();
             }
         }
 
@@ -62,7 +64,7 @@ public class PersonServiceIMPL implements IPersonService {
 //        if (personList.size() == 0) {
 //            id = 1;
 //        } else {
-//            for (int i = 1; i < personList.size(); i++) {
+//            for (int i = 0; i < personList.size(); i++) {
 //                if (personList.get(i).getId() > max) {
 //                    max = personList.get(i).getId();
 //                }
@@ -74,13 +76,17 @@ public class PersonServiceIMPL implements IPersonService {
         String employeeCode = RegexData.regexStr(scanner.nextLine(),REGEX_PRODUCE,"Nhập theo định dạng NVSX-XXX");
 
         System.out.println("Nhập họ và tên");
-        String name = scanner.nextLine();
+        String name = RegexData.regexStr(scanner.nextLine(),REGEX_STR,"Nhập chữ in hoa đầu, không được trông" );
 
         System.out.println("Nhập ngày tháng năm sinh");
        LocalDate birthDay = LocalDate.parse(RegexData.regexAge(scanner.nextLine(),REGEX_TIME),formatter);
 
-        System.out.println("Nhập địa chỉ");
-        String address = scanner.nextLine();
+
+
+
+            System.out.println("Nhập địa chỉ");
+            String address = scanner.nextLine();
+
 
         System.out.println("Nhập số sản phẩm");
         int productNumber = Integer.parseInt(RegexData.regexStr(scanner.nextLine(),REGEX_POSITIVE_NUMBER,"Giá trị nhập phải lớn hơn 0"));
@@ -101,9 +107,9 @@ public class PersonServiceIMPL implements IPersonService {
         int id = 1;
         int max = id;
 
-        for (int i = 0; i < personList.size(); i++) {
-            if (max < personList.get(i).getId()) {
-                max= personList.get(i).getId();
+        for (Person person : personList) {
+            if (max < person.getId()) {
+                max = person.getId();
             }
         }
 
@@ -112,6 +118,7 @@ public class PersonServiceIMPL implements IPersonService {
 
         System.out.println("Nhập họ và tên");
         String name = scanner.nextLine();
+
 
         System.out.println("Nhập ngày tháng năm sinh");
         LocalDate birthDay = LocalDate.parse(RegexData.regexAge(scanner.nextLine(),REGEX_TIME),formatter);

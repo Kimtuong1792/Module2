@@ -32,7 +32,7 @@ public class ABCManagement {
             System.out.println("4. search");
             System.out.println("5. exit");
             System.out.println("Choose options : ");
-            int choose = Integer.parseInt(scanner.nextLine());
+            int choose = checkException();
             switch (choose) {
                 case 1:
                     personServiceIMPL.display();
